@@ -1,6 +1,6 @@
 # Set the python version as a build-time argument
 # with Python 3.12 as the default
-ARG PYTHON_VERSION=3.12-slim-bullseye
+ARG PYTHON_VERSION=3.13-slim-bullseye
 FROM python:${PYTHON_VERSION}
 
 # Create a virtual environment
@@ -49,7 +49,7 @@ RUN pip install -r /tmp/requirements.txt
 # RUN python manage.py collectstatic --noinput
 
 # set the Django default project name
-ARG PROJ_NAME="cfehome"
+ARG PROJ_NAME="jmhome"
 
 # create a bash script to run the Django project
 # this script will execute at runtime when
