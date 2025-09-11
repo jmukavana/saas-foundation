@@ -1,2 +1,7 @@
+
 Django>=5.2,<5.3
 gunicorn
+python-decouple
+psycopg[binary]
+dj-database-url
+dj-config-url
