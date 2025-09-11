@@ -5,3 +5,5 @@ python-decouple
 psycopg[binary]
 dj-database-url
 dj-config-url
+requests
+pathlib
