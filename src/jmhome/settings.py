@@ -30,6 +30,8 @@ DEBUG =config("DJANGO_DEBUG",cast=bool,default=0)
 
 ALLOWED_HOSTS = [
     ".railway.app",
+    "localhost",
+    "127.0.0.1",
 
 ]
 if DEBUG:
