@@ -7,3 +7,4 @@ dj-database-url
 dj-config-url
 requests
 pathlib
+whitenoise

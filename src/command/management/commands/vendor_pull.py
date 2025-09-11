@@ -7,8 +7,10 @@ import helpers
 
 STATICFILES_VENDORS_DIR = getattr(settings, 'STATICFILES_VENDORS_DIR')
 
-VENDOR_STATICFILES = {"flowbite.min.js": "https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js",
-    "flowbite.min.css": "https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css", }
+VENDOR_STATICFILES = {
+    "flowbite.min.js": "https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js",
+    "flowbite.min.css": "https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+}
 
 
 class Command(BaseCommand):
