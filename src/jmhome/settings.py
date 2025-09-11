@@ -29,9 +29,7 @@ DEBUG =config("DJANGO_DEBUG",cast=bool,default=0)
 
 
 ALLOWED_HOSTS = [
-    ".railway.app",
-    "localhost",
-    "127.0.0.1",
+    ".railway.app"
 
 ]
 if DEBUG:
@@ -96,16 +94,16 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-CONN_MAX_AGE=config("CONN_MAX_AGE",cast=int,default=60)
-DATABASE_URL = config("DATABASE_URL",cast=str,default=None)
-if DATABASE_URL is not None:
-    import dj_database_url
-    DATABASES = {
-        'default':dj_database_url.config(
-            default=DATABASE_URL,
-            conn_max_age=CONN_MAX_AGE,
-            conn_health_checks=True)
-    }
+# CONN_MAX_AGE=config("CONN_MAX_AGE",cast=int,default=60)
+# DATABASE_URL = config("DATABASE_URL",cast=str,default=None)
+# if DATABASE_URL is not None:
+#     import dj_database_url
+#     DATABASES = {
+#         'default':dj_database_url.config(
+#             default=DATABASE_URL,
+#             conn_max_age=CONN_MAX_AGE,
+#             conn_health_checks=True)
+#     }
 
 
 
@@ -144,6 +142,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_BASE_DIR = BASE_DIR / 'staticfiles'
+STATICFILES_VENDORS_DIR = STATICFILES_BASE_DIR / 'vendors'
+
+# source the python manage.py collect static
+STATICFILES_DIRS = [
+    STATICFILES_BASE_DIR,
+]
+# output the static files to the staticfiles directory
+# local cdn   staticfiles
+
+STATIC_ROOT = BASE_DIR.parent / 'local-cdn'
+if not DEBUG:
+    STATIC_ROOT= BASE_DIR.parent / 'prod-cdn'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
